@@ -23,6 +23,7 @@ class ApartmentsController < ApplicationController
   def update
     apartment = Apartment.find_by(id:params[:id])
     apartment.update(apartment_params)
+    render json: apartment
   end
 
   def destroy
