@@ -64,6 +64,31 @@ describe "Apartments API" do
   end
 
   #TEST to update an apartment
+  #TEST to update an apartment
+it "can update an apartment" do
+  id = @apartment.id
+  new_params = {
+    apartment: {
+      # address_1: '300 Blah St.',
+      # address_2: '#400',
+      # city: 'San Diego',
+      # postal_code: '92101',
+      # state: 'CA',
+      country: 'Norway',
+      building_manager_name: 'Albert',
+      # building_manager_phone: 15556782345,
+      # building_manager_hours: 'Mon-Fri: 8AM-5PM'
+    }
+  }
+  patch "/apartments/#{id}", params: new_params
+  expect(response).to be_success
+  json=JSON.parse(response.body)
+  p json
+  p json['building_manager_name']
+  p json['country']
+  expect(json['building_manager_name']).to eq('Albert')
+  expect(json['country']).to eq('Norway')
+end
 
   #TEST to destroy an apartment
   it "can delete an apartment" do
