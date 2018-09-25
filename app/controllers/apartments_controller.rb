@@ -21,6 +21,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show_by_user
+    #user = User.find()
     apartments = Apartment.where(user_id:params[:user_id])
     p apartments
     render json: apartments
