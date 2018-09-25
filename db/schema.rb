@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_09_20_180738) do
     t.string "state"
     t.string "country"
     t.string "building_manager_name"
-    t.bigint "building_manager_phone"
+    t.string "building_manager_phone"
     t.text "building_manager_hours"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
