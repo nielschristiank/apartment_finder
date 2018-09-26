@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, defaults: {format: :json}, controllers: { sessions: 'users/sessions', registrations: "users/registrations" }
   get '/users/:id' => 'information#show_user'
 
-  # resources :user do
+  # resources :users do
   #   resources :apartments
   # end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

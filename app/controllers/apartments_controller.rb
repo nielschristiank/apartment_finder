@@ -1,4 +1,5 @@
 class ApartmentsController < ApplicationController
+  #before_action :authenicate_user!, only: [:create, :destroy, :show_by_user]
 
   def index
     apartments = Apartment.all
